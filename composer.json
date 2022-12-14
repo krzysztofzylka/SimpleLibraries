@@ -1,6 +1,7 @@
 {
     "name": "krzysztofzylka/simple-libraries",
     "description": "Simple libraries",
+    "minimum-stability": "dev",
     "type": "library",
     "license": "MIT",
     "autoload": {
