@@ -1,0 +1,17 @@
+{
+    "name": "krzysztofzylka/simple-libraries",
+    "description": "Simple libraries",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SimpleLibraries\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Krzysztof Żyłka"
+        }
+    ],
+    "require": {}
+}
