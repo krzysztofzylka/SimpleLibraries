@@ -1,20 +1,19 @@
 {
     "name": "krzysztofzylka/simple-libraries",
-    "description": "Simple libraries",
-    "minimum-stability": "dev",
+    "description": "Simple Libraries",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "SimpleLibraries\\": "src/"
+            "Krzysztofzylka\\SimpleLibraries\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Krzysztof Żyłka"
+            "name": "krzysztofzylka",
+            "email": "krzysztofzylka@yahoo.com"
         }
     ],
-    "require": {
-        "php": ">=8.1"
-    }
+    "minimum-stability": "dev",
+    "require": {}
 }
