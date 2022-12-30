@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleLibraries\Library;
+namespace krzysztofzylka\SimpleLibraries\Library;
 
 class Response {
 

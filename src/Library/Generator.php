@@ -1,6 +1,6 @@
 <?php
 
-namespace core\library;
+namespace krzysztofzylka\SimpleLibraries\Library;
 
 use Exception;
 

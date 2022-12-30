@@ -1,10 +1,10 @@
 <?php
 
-namespace core\library;
+namespace krzysztofzylka\SimpleLibraries\Library;
 
 use Exception;
+use krzysztofzylka\SimpleLibraries\Exception\SimpleLibraryException;
 use ReflectionClass;
-use SimpleLibraries\Exception\SimpleLibraryException;
 
 /**
  * PHP Docs

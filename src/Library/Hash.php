@@ -1,8 +1,8 @@
 <?php
 
-namespace SimpleLibraries\Library;
+namespace krzysztofzylka\SimpleLibraries\Library;
 
-use SimpleLibraries\Exception\SimpleLibraryException;
+use krzysztofzylka\SimpleLibraries\Exception\SimpleLibraryException;
 
 /**
  * Hashing
