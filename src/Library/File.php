@@ -3,6 +3,7 @@
 namespace krzysztofzylka\SimpleLibraries\Library;
 
 use Exception;
+use krzysztofzylka\SimpleLibraries\Exception\SimpleLibraryException;
 
 /**
  * Files
@@ -14,6 +15,7 @@ class File {
      * @param string|array $paths directory path or paths
      * @param int $permission permission (default 0777)
      * @return ?bool bool or null (if $paths is array)
+     * @throws SimpleLibraryException
      */
     public static function mkdir(string|array $paths, int $permission = 0777) : ?bool {
         if (is_array($paths)) {
@@ -28,7 +30,11 @@ class File {
             return false;
         }
 
-        return mkdir(self::repairPath($paths), $permission, true);
+        try {
+            return mkdir(self::repairPath($paths), $permission, true);
+        } catch (Exception $exception) {
+            throw new SimpleLibraryException($exception->getMessage(), 0, ['exception' => $exception, 'paths' => $paths, 'permission' => $permission]);
+        }
     }
 
     /**
