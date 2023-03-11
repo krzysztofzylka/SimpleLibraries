@@ -30,10 +30,10 @@ class File {
             return false;
         }
 
-        try {
-            return mkdir(self::repairPath($paths), $permission, true);
-        } catch (Exception $exception) {
-            throw new SimpleLibraryException($exception->getMessage(), 0, ['exception' => $exception, 'paths' => $paths, 'permission' => $permission]);
+        if (@mkdir(self::repairPath($paths), $permission, true)) {
+            return true;
+        } else {
+            throw new SimpleLibraryException(error_get_last()['message'], 0, ['paths' => $paths, 'permission' => $permission]);
         }
     }
 
