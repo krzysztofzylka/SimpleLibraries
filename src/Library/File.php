@@ -116,4 +116,32 @@ class File {
         }
     }
 
+    /**
+     * Copy file if not exists or source modify date is newer
+     * @param string $sourcePath source path
+     * @param string $destinationPath destination path
+     * @return bool
+     */
+    public static function copy(string $sourcePath, string $destinationPath) : bool {
+        $destinationModify = filemtime($destinationPath);
+        $sourceModify = filemtime($sourcePath);
+
+        if (!file_exists($destinationPath) || $sourceModify > $destinationModify) {
+            copy($sourcePath, $destinationPath);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get file extension
+     * @param string $path
+     * @return string
+     */
+    public static function getExtension(string $path) : string {
+        return pathinfo($path, PATHINFO_EXTENSION);
+    }
+
 }

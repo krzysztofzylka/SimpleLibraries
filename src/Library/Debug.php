@@ -50,4 +50,13 @@ class Debug {
         echo $data;
     }
 
+    /**
+     * Dump
+     * @param ...$data
+     * @return string
+     */
+    public static function dump(...$data) : string {
+        return '<pre>' . var_export($data, true) . '</pre>';
+    }
+
 }

@@ -79,4 +79,12 @@ class Request {
         return !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
     }
 
+    /**
+     * Get php://input contents
+     * @return string|false
+     */
+    public static function getInputContents() : string|false {
+        return file_get_contents('php://input');
+    }
+
 }

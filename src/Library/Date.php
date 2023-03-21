@@ -218,4 +218,12 @@ class Date {
         return date($this->format, $this->time);
     }
 
+    /**
+     * Get simple date in "Y-m-d H:i:s" format
+     * @return string
+     */
+    public static function getSimpleDate() : string {
+        return date('Y-m-d H:i:s');
+    }
+
 }

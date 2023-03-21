@@ -61,4 +61,23 @@ class Strings {
         return substr($string, 0, $length - (strlen($lastWord) + 1));
     }
 
+    /**
+     * Remove line breaks in string
+     * @param string $string
+     * @return string
+     */
+    public static function removeLineBreaks(string $string) : string {
+        return str_replace(["\n", "\r", '<br />', '<br>'], '', $string);
+    }
+
+    /**
+     * Camelize string with separator
+     * @param string $string
+     * @param string $separator
+     * @return string
+     */
+    public static function camelizeString(string $string, string $separator = '') : string {
+        return str_replace($separator, '', ucwords($string, $separator));
+    }
+
 }
