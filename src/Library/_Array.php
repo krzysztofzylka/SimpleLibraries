@@ -47,7 +47,7 @@ class _Array {
      * @return mixed
      */
     public static function getFromArrayUsingString(string $name, array $array) : mixed {
-        $arrayData = '$data[\'' . implode('\'][\'', explode('.', $name)) . '\']';
+        $arrayData = '$array[\'' . implode('\'][\'', explode('.', $name)) . '\']';
 
         return @eval("return $arrayData;");
     }
