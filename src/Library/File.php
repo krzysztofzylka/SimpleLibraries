@@ -123,8 +123,8 @@ class File {
      * @return bool
      */
     public static function copy(string $sourcePath, string $destinationPath) : bool {
-        $destinationModify = filemtime($destinationPath);
-        $sourceModify = filemtime($sourcePath);
+        $destinationModify = file_exists($destinationPath) ? filemtime($destinationPath) : 0;
+        $sourceModify = file_exists($sourcePath) ? filemtime($sourcePath) : 0;
 
         if (!file_exists($destinationPath) || $sourceModify > $destinationModify) {
             return copy($sourcePath, $destinationPath);
