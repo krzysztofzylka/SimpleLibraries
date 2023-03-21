@@ -127,9 +127,7 @@ class File {
         $sourceModify = filemtime($sourcePath);
 
         if (!file_exists($destinationPath) || $sourceModify > $destinationModify) {
-            copy($sourcePath, $destinationPath);
-
-            return true;
+            return copy($sourcePath, $destinationPath);
         }
 
         return false;
