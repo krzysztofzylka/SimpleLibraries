@@ -12,7 +12,7 @@ class Args {
      * @param array $argv
      * @return array
      */
-    public function getArgs(array $argv) : array {
+    public static function getArgs(array $argv) : array {
         $return = [
             'path' => $argv[0],
             'args' => [],
