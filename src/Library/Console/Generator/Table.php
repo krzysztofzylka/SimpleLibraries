@@ -2,8 +2,6 @@
 
 namespace krzysztofzylka\SimpleLibraries\Library\Console\Generator;
 
-use krzysztofzylka\SimpleLibraries\Library\Console\Prints;
-
 /**
  * Table generator
  */
@@ -13,7 +11,6 @@ class Table {
 
     private array $columns = [];
 
-//    private array $style = ['|', '-', '|'];
     private array $style = ["┌", '─', '┐', '│', '┬', '└', '┘', '┴'];
 
     private array $renderData = [];

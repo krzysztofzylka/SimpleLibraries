@@ -1,0 +1,4 @@
+1.0.16
+- Repair formatBytes
+- Add console help header method
+- Add console colors

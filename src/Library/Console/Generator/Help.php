@@ -2,6 +2,7 @@
 
 namespace krzysztofzylka\SimpleLibraries\Library\Console\Generator;
 
+use krzysztofzylka\SimpleLibraries\Library\Console\Helper\Color;
 use krzysztofzylka\SimpleLibraries\Library\Console\Prints;
 
 /**
@@ -18,7 +19,16 @@ class Help {
      * @return void
      */
     public function addHelp(string $command, string $message) : void {
-        $this->helpers[] = [$command, $message];
+        $this->helpers[] = [$command, $message, 'type' => 'help'];
+    }
+
+    /**
+     * Add console header
+     * @param string $header
+     * @return void
+     */
+    public function addHeader(string $title, int|string $color = null) : void {
+        $this->helpers[] = ['', $title, 'type' => 'header', 'color' => $color];
     }
 
     /**
@@ -27,7 +37,14 @@ class Help {
      */
     public function render() : void {
         foreach ($this->helpers as $data) {
-            $text = $data[0] . str_repeat(' ', $this->getSpaces($data[0])) . ' - '  .$data[1];
+            switch ($data['type']) {
+                case 'header':
+                    $text = Color::generateColor(isset($data['color']) ? $data['color'] : 'blue') . 'Help' . Color::generateColor();
+                    break;
+                default:
+                    $text = $data[0] . str_repeat(' ', $this->getSpaces($data[0])) . ' - '  .$data[1];
+                    break;
+            }
 
             Prints::print($text);
         }
