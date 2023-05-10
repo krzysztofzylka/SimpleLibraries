@@ -38,13 +38,14 @@ class Generator {
      * @return string
      */
     public static function formatBytes(int $bytes, int $precision = 2) : string {
-        $units = array('B', 'KB', 'MB', 'GB', 'TB');
+        $size   = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+        $factor = floor((strlen($bytes) - 1) / 3);
 
-        $bytes = max($bytes, 0);
-        $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
-        $pow = min($pow, count($units) - 1);
+        if ((int)$factor === 0) {
+            $precision = 0;
+        }
 
-        return round($bytes, $precision) . ' ' . $units[$pow];
+        return sprintf("%.{$precision}f %s", $bytes / (1024 ** $factor), $size[$factor]);
     }
 
 }
