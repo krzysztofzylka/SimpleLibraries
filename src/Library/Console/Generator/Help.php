@@ -39,7 +39,7 @@ class Help {
         foreach ($this->helpers as $data) {
             switch ($data['type']) {
                 case 'header':
-                    $text = Color::generateColor(isset($data['color']) ? $data['color'] : 'blue') . 'Help' . Color::generateColor();
+                    $text = Color::generateColor(isset($data['color']) ? $data['color'] : 'blue') . $data[1] . Color::generateColor();
                     break;
                 default:
                     $text = $data[0] . str_repeat(' ', $this->getSpaces($data[0])) . ' - '  .$data[1];

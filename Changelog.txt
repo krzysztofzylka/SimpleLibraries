@@ -1,3 +1,7 @@
+1.0.17
+Console/Generator/Help
+- Repair header method
+
 1.0.16
 - Repair formatBytes
 - Add console help header method
