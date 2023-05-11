@@ -22,10 +22,14 @@ class Strings {
 
     /**
      * Escape string
-     * @param string $string
-     * @return string
+     * @param ?string $string
+     * @return ?string
      */
-    public static function escape(string $string) : string {
+    public static function escape(?string $string) : ?string {
+        if (is_null($string)) {
+            return null;
+        }
+
         return addslashes($string);
     }
 

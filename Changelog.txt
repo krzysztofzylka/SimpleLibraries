@@ -1,3 +1,6 @@
+1.0.18
+- Repair method escape in Strings library
+
 1.0.17
 Console/Generator/Help
 - Repair header method
