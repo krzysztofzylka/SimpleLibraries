@@ -9,6 +9,30 @@ namespace krzysztofzylka\SimpleLibraries\Library;
 class Date {
 
     /**
+     * Seconds in month (30 day)
+     * @var int
+     */
+    public static int $MONTH = 2592000;
+
+    /**
+     * Seconds in day
+     * @var int
+     */
+    public static int $DAY = 86400;
+
+    /**
+     * Seconds in hour
+     * @var int
+     */
+    public static int $HOUR = 3600;
+
+    /**
+     * Seconds in minute
+     * @var int
+     */
+    public static int $MINUTE = 60;
+
+    /**
      * Timestamp
      * @var int
      * @ignore
@@ -224,6 +248,15 @@ class Date {
      */
     public static function getSimpleDate() : string {
         return date('Y-m-d H:i:s');
+    }
+
+    /**
+     * Get seconds to date
+     * @param string|int $date
+     * @return float|int
+     */
+    public static function getSecondsToDate(string|int $date) {
+        return abs(time() - (is_int($date) ? $date : strtotime($date)));
     }
 
 }
