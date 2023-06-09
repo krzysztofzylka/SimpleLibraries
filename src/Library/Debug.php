@@ -14,14 +14,17 @@ class Debug {
      * @param string $title Table title
      * @return void
      */
-    public static function print_r(mixed $data, bool $var_type = false, string $title = 'ARRAY') : void {
+    public static function print_r(mixed $data, bool $var_type = false, ?string $title = null) : void {
         if (is_object($data)) {
             $data = (array)$data;
         }
 
         if (is_array($data)) {
             echo '<table class="table table-sm mb-0">';
-            echo '<tr><td class="text-light bg-dark" colspan="2">' . $title . '</td></tr>';
+
+            if (!is_null($title)) {
+                echo '<tr><td class="text-light bg-dark" colspan="2">' . $title . '</td></tr>';
+            }
 
             foreach ($data as $key => $value) {
                 $type = gettype($value);
