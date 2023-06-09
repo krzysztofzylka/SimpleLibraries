@@ -1,3 +1,6 @@
+1.0.20
+Debug
+- Extend print_r
 1.0.19
 Date:
 - Add getSecondsToDate method
