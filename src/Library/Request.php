@@ -2,6 +2,9 @@
 
 namespace krzysztofzylka\SimpleLibraries\Library;
 
+use krzysztofzylka\SimpleLibraries\Exception\SimpleLibraryException;
+use krzysztofzylka\SimpleLibraries\Library\Enums\ContentType;
+
 /**
  * Requests
  */
@@ -81,10 +84,24 @@ class Request {
 
     /**
      * Get php://input contents
+     * @param ContentType|null $contentType
      * @return string|false
+     * @throws SimpleLibraryException
      */
-    public static function getInputContents() : string|false {
-        return file_get_contents('php://input');
+    public static function getInputContents(?ContentType $contentType = ContentType::String) : string|false {
+        $contents = file_get_contents('php://input');
+
+        switch ($contentType) {
+            case ContentType::Json:
+                if (!Json::isJson($contents)) {
+                    throw new SimpleLibraryException('Content is not json');
+                }
+
+                return json_decode($contents, true);
+            case ContentType::String:
+            default:
+                return $contents;
+        }
     }
 
 }

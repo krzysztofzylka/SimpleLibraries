@@ -32,6 +32,16 @@ class Generator {
     }
 
     /**
+     * Unikatowy identyfikator (hash xxh128)
+     * @param string $salt
+     * @return string
+     * @throws Exception
+     */
+    public static function uniqHash(string $salt = '') : string {
+        return hash('xxh128', $salt . self::uniqId());
+    }
+
+    /**
      * Int to bytes
      * @param int $bytes
      * @param int $precision
