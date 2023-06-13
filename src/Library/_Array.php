@@ -82,4 +82,34 @@ class _Array {
         return in_array($name, array_keys($array));
     }
 
+    /**
+     * Reduction array
+     * @param array $array
+     * @param int $nthElement
+     * @param bool $lastKey
+     * @return array
+     */
+    public function reduction(array $array, int $nthElement = 2, bool $lastKey = true) : array {
+        $i = 1;
+        $first = true;
+        $arrayLastKey = array_key_last($array);
+
+        foreach (array_keys($array) as $key) {
+            if ($lastKey && $key === $arrayLastKey) {
+                continue;
+            }
+
+            if ($i === $nthElement) {
+                $i = 1;
+            } elseif (!$first) {
+                unset($array[$key]);
+                $i++;
+            }
+
+            $first = false;
+        }
+
+        return $array;
+    }
+
 }
