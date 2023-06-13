@@ -8,10 +8,10 @@ class Server {
      * Get meminfo
      * @return array
      */
-    public function getMeminfo(): array
+    public static function getMeminfo(): array
     {
         $data = explode("\n", file_get_contents("/proc/meminfo"));
-        $meminfo = array();
+        $meminfo = [];
 
         foreach ($data as $line) {
             list($key, $val) = explode(":", $line);
@@ -25,9 +25,9 @@ class Server {
      * Get ram info
      * @return array
      */
-    public function getRamInfo(): array
+    public static function getRamInfo(): array
     {
-        $meminfo = $this->getMeminfo();
+        $meminfo = self::getMeminfo();
 
         return [
             'total' => $meminfo['total'],
@@ -40,7 +40,7 @@ class Server {
      * Get cpu usage
      * @return array
      */
-    public function getCpuUsage(): array
+    public static function getCpuUsage(): array
     {
         $cpuUsage = sys_getloadavg();
 

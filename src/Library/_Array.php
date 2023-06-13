@@ -89,7 +89,7 @@ class _Array {
      * @param bool $lastKey
      * @return array
      */
-    public function reduction(array $array, int $nthElement = 2, bool $lastKey = true) : array {
+    public static function reduction(array $array, int $nthElement = 2, bool $lastKey = true) : array {
         $i = 1;
         $first = true;
         $arrayLastKey = array_key_last($array);
