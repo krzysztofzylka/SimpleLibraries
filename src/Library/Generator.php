@@ -58,4 +58,22 @@ class Generator {
         return sprintf("%.{$precision}f %s", $bytes / (1024 ** $factor), $size[$factor]);
     }
 
+    /**
+     * GUID generator
+     * @return string
+     */
+    public function guid() : string {
+        return sprintf(
+            '%04X%04X-%04X-%04X-%04X-%04X%04X%04X',
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535)
+        );
+    }
+
 }

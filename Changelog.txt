@@ -1,3 +1,19 @@
+1.0.23
+Generator
+- GUID generator
+Hash
+- Add new hash algorithm:
+    - xxh32
+    - xxh64
+    - xxh3
+    - xxh128
+    - crc32c
+Date
+- Add return type to getSecondsToDate
+
+1.0.22
+Fix bugs
+
 1.0.21
 Server
 - Add server library

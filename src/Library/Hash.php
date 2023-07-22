@@ -29,7 +29,12 @@ class Hash {
         'crc32' => ['number' => '005'],
         'ripemd256' => ['number' => '006'],
         'snefru' => ['number' => '007'],
-        'gost' => ['number' => '008']
+        'gost' => ['number' => '008'],
+        'xxh32' => ['number' => '009'],
+        'xxh64' => ['number' => '010'],
+        'xxh3' => ['number' => '011'],
+        'xxh128' => ['number' => '012'],
+        'crc32c' => ['number' => '013']
     ];
 
     /**
@@ -49,17 +54,52 @@ class Hash {
             case 'ripemd256':
             case 'snefru':
             case 'gost':
-                $return = str_replace(['{type}', '{hash}'], [self::$hashList[$algorithm]['number'], hash($algorithm, $string)], $return);
+            case 'xxh32':
+            case 'xxh64':
+            case 'xxh3':
+            case 'xxh128':
+            case 'crc32c':
+                $return = str_replace(
+                    [
+                        '{type}',
+                        '{hash}'
+                    ],
+                    [
+                        self::$hashList[$algorithm]['number'],
+                        hash($algorithm, $string)
+                    ],
+                    $return
+                );
                 break;
             case 'md5':
-                $return = str_replace(['{type}', '{hash}'], [self::$hashList[$algorithm]['number'], md5($string)], $return);
+                $return = str_replace(
+                    [
+                        '{type}',
+                        '{hash}'
+                    ],
+                    [
+                        self::$hashList[$algorithm]['number'],
+                        md5($string)
+                    ],
+                    $return
+                );
                 break;
             case 'pbkdf2':
                 if (!function_exists('hash_pbkdf2')) {
                     return throw new SimpleLibraryException('Unknown function hash_pbkdf2');
                 }
 
-                $return = str_replace(['{type}', '{hash}'], [self::$hashList[$algorithm]['number'], hash_pbkdf2("sha256", $string, self::$salt, 4096, 20)], $return);
+                $return = str_replace(
+                    [
+                        '{type}',
+                        '{hash}'
+                    ],
+                    [
+                        self::$hashList[$algorithm]['number'],
+                        hash_pbkdf2('sha256', $string, self::$salt, 4096, 20)
+                    ],
+                    $return
+                );
                 break;
         }
 

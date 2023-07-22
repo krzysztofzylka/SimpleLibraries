@@ -253,10 +253,10 @@ class Date {
     /**
      * Get seconds to date
      * @param string|int $date
-     * @return float|int
+     * @return int
      */
-    public static function getSecondsToDate(string|int $date) {
-        return abs(time() - (is_int($date) ? $date : strtotime($date)));
+    public static function getSecondsToDate(string|int $date) : int {
+        return round(abs(time() - (is_int($date) ? $date : strtotime($date))));
     }
 
 }
