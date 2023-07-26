@@ -31,8 +31,24 @@ class Debug {
 
         foreach ($data as $key => $value) {
             $type = gettype($value) === 'integer' ? 'int' : gettype($value);
+            $isJson = false;
 
-            if (is_string($value) && Json::isJson($value)) {
+            if (is_string($value)
+                && !empty($value)
+                && (str_starts_with($value, '[') && str_ends_with($value, ']')
+                    || str_starts_with($value, '{') && str_ends_with($value, '}'))
+            ) {
+                try {
+                    $value = Json::fix($value);
+
+                    if (Json::isJson($value)) {
+                        $isJson = true;
+                    }
+                } catch (\Throwable) {
+                }
+            }
+
+            if ($isJson) {
                 $id = Generator::uniqId(15);
                 $type .= ' (JSON)';
 
