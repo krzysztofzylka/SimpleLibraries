@@ -15,5 +15,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "adhocore/json-fixer": "v1.0.0"
+    }
 }
