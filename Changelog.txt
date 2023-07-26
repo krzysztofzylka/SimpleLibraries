@@ -1,3 +1,7 @@
+1.0.24
+Debug
+    - Extend, optimize and fix print_r
+
 1.0.23
 Generator
 - GUID generator
