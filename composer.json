@@ -18,5 +18,5 @@
     "require": {
         "adhocore/json-fixer": "v1.0.1"
     },
-    "funding": {}
+    "funding": []
 }
