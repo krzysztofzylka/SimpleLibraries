@@ -1,6 +1,17 @@
+1.0.25
+- Update composer packages
+Session
+- Add clean session method
+Strings
+- Add decamelize method
+PHPDoc
+- Fix bug in cleanComment method
+Price
+- New library
+
 1.0.24
 Debug
-    - Extend, optimize and fix print_r
+- Extend, optimize and fix print_r
 
 1.0.23
 Generator

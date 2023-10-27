@@ -44,4 +44,13 @@ class Session {
         return isset($_SESSION[$name]);
     }
 
+    /**
+     * Clean session
+     * @return void
+     */
+    public static function clean() : void {
+        session_unset();
+        session_destroy();
+    }
+
 }

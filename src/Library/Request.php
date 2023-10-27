@@ -43,7 +43,7 @@ class Request {
     }
 
     /**
-     * Get GET data
+     * Get $_GET data
      * @param string $name
      * @param mixed|null $value Default value
      * @return mixed

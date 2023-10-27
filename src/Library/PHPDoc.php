@@ -120,7 +120,7 @@ class PHPDoc {
 
             if (str_starts_with($comment, '@')) {
                 $explodeComment = explode(' ', $comment, 2);
-                $cleanComment[] = [str_replace('@', '', $explodeComment[0]), $explodeComment[1]];
+                $cleanComment[] = [str_replace('@', '', $explodeComment[0]), $explodeComment[1] ?? null];
 
                 continue;
             }

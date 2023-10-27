@@ -84,4 +84,14 @@ class Strings {
         return str_replace($separator, '', ucwords($string, $separator));
     }
 
+    /**
+     * Decamelize string with separator
+     * @param string $string
+     * @param string $separator
+     * @return string
+     */
+    public static function decamelizeString(string $string, string $separator = '_') : string {
+        return strtolower(preg_replace('/(?<!^)[A-Z]/', $separator . '$0', $string));
+    }
+
 }

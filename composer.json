@@ -16,6 +16,17 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "adhocore/json-fixer": "v1.0.0"
-    }
+        "adhocore/json-fixer": "v1.0.1"
+    },
+    "funding": [
+        {
+            "url": "https://paypal.me/jessesquires"
+        },
+        {
+            "url": "https://cash.app/$jsq"
+        },
+        {
+            "url": "https://venmo.com/u/jsq1312"
+        }
+    ]
 }
