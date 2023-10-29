@@ -1,5 +1,7 @@
 1.0.28
 - Sandbox library
+_Array
+- Remove special chars
 
 1.0.27
 - Update composer packages

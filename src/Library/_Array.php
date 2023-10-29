@@ -23,6 +23,23 @@ class _Array {
     }
 
     /**
+     * Remove special chars
+     * @param array $data
+     * @return array
+     */
+    public static function htmlSpecialChars(array $data) : array {
+        $return = [];
+
+        foreach ($data as $name => $value) {
+            $return[$name] = is_array($value)
+                ? self::htmlSpecialChars($value)
+                : (is_string($value) ? htmlspecialchars($value) : $value);
+        }
+
+        return $return;
+    }
+
+    /**
      * Trim
      * @param array $data
      * @return array
