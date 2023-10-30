@@ -17,6 +17,10 @@ class Strings {
             $url = str_replace('//', '/', $url);
         } while (str_contains($url, '//'));
 
+        if (str_contains($url, ':/')) {
+            $url = str_replace(':/', '://', $url);
+        }
+
         return $url;
     }
 
@@ -29,6 +33,8 @@ class Strings {
         if (is_null($string)) {
             return null;
         }
+
+        $string = str_replace(["\n", "\r", "\t"], ["\\n", "\\r", "\\t"], $string);
 
         return addslashes($string);
     }
@@ -58,6 +64,10 @@ class Strings {
      * @return string
      */
     public static function substrWithoutLastWord(string $string, int $length) : string {
+        if (strlen($string) <= $length) {
+            return $string;
+        }
+
         $string = substr($string, 0, $length);
         $explodeString = explode(' ', $string);
         $lastWord = end($explodeString);

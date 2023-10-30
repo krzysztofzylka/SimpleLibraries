@@ -11,8 +11,9 @@ class Debug {
      * print_r in table (with bootstrap)
      * @param mixed $data Input data
      * @param bool $var_type Show vae type in table
-     * @param string $title Table title
+     * @param string|null $title Table title
      * @return void
+     * @throws \Exception
      */
     public static function print_r(mixed $data, bool $var_type = false, ?string $title = null) : void {
         $data = is_callable($data) ? 'CALLABLE' : (is_object($data) ? (array)$data : $data);

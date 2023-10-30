@@ -51,6 +51,7 @@ class Session {
     public static function clean() : void {
         session_unset();
         session_destroy();
+        unset($_SESSION);
     }
 
 }

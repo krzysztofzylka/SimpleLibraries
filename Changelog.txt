@@ -1,3 +1,18 @@
+1.0.29
+- Unit tests
+Debug
+- Refactor
+Generator
+- Refactor guid generator method
+Integer
+- Fix strToFloat bug
+Sandbox
+- Fix bug
+Session
+- Fix clean bug
+Strings
+- Fix repairUrl, escape and substrWithoutLastWord bugs
+
 1.0.28
 - Sandbox library
 _Array

@@ -13,6 +13,10 @@ class Integer {
      * @return float
      */
     public static function strToFloat(string $int) : float {
+        if (str_contains($int, '.') && str_contains($int, ',')) {
+            $int = str_replace(',', '', $int);
+        }
+
         return floatval(str_replace(',', '.', trim($int)));
     }
 

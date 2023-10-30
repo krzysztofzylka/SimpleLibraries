@@ -16,9 +16,9 @@ class Sandbox {
 
     /**
      * File path
-     * @var string
+     * @var ?string
      */
-    private string $phpFilePath;
+    private ?string $phpFilePath;
 
     /**
      * Sandbox directory
