@@ -1,3 +1,7 @@
+1.0.30
+File:
+- Add new method: getContentType
+
 1.0.29
 - Unit tests
 Debug
