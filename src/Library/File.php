@@ -147,7 +147,7 @@ class File {
      * @param string $fileExtension
      * @return false|string
      */
-    private static function getContentType(string $fileExtension): false|string
+    public static function getContentType(string $fileExtension): false|string
     {
         $images = ['gif', 'png', 'webp', 'bmp', 'avif'];
         $text = ['css', 'csv'];
