@@ -37,7 +37,7 @@ class Price {
      * @throws SimpleLibraryException
      */
     public static function calculateNetAmount(float $grossAmount, float $vatRate) : float {
-        if ($vatRate <= 0) {
+        if ($vatRate < 0) {
             throw new SimpleLibraryException("VAT rate must be greater than 0");
         }
 
@@ -52,7 +52,7 @@ class Price {
      * @throws SimpleLibraryException
      */
     public static function calculateGrossAmount(float $netAmount, float $vatRate) : float {
-        if ($vatRate <= 0) {
+        if ($vatRate < 0) {
             throw new SimpleLibraryException("VAT rate must be greater than 0");
         }
 

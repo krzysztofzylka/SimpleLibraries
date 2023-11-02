@@ -34,4 +34,32 @@ class IntegerTest extends TestCase {
         $result = Integer::isStringInt($string);
         $this->assertFalse($result);
     }
+
+    public function testIsInRangeTrue()
+    {
+        // Test when number is within the range
+        $this->assertTrue(Integer::isInRange(5, 1, 10));
+    }
+
+    public function testIsInRangeFalse()
+    {
+        // Test when number is outside the range
+        $this->assertFalse(Integer::isInRange(15, 1, 10));
+    }
+
+    public function testIsInRangeEdgeValues()
+    {
+        // Test when number is equal to the minimum value
+        $this->assertTrue(Integer::isInRange(1, 1, 10));
+
+        // Test when number is equal to the maximum value
+        $this->assertTrue(Integer::isInRange(10, 1, 10));
+    }
+
+    public function testIsInRangeNegativeValues()
+    {
+        // Test when using negative values
+        $this->assertFalse(Integer::isInRange(-5, 1, 10));
+    }
+
 }
