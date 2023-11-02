@@ -1,3 +1,12 @@
+1.0.32
+Integer
+- Add new method: isInRange
+Price
+- Add exception to calculateGrossAmount and calculateNetAmount
+
+1.0.31
+Fix getContentType bug
+
 1.0.30
 File:
 - Add new method: getContentType
