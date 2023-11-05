@@ -1,3 +1,11 @@
+1.0.33
+Date
+- Update getSimpleDate method, add microtime
+File
+- Add new method: copyDirectory
+Generator
+- Method guid is static
+
 1.0.32
 Integer
 - Add new method: isInRange

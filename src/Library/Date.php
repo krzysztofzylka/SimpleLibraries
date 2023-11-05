@@ -2,6 +2,8 @@
 
 namespace krzysztofzylka\SimpleLibraries\Library;
 
+use DateTime;
+
 /**
  * Operating on date
  * @package Biblioteki
@@ -243,10 +245,18 @@ class Date {
     }
 
     /**
-     * Get simple date in "Y-m-d H:i:s" format
+     * Get simple date in "Y-m-d H:i:s.u" format
+     * @param bool $microTime
      * @return string
      */
-    public static function getSimpleDate() : string {
+    public static function getSimpleDate(bool $microTime = false) : string {
+        if ($microTime) {
+            return DateTime::createFromFormat(
+                'U.u',
+                sprintf('%.f', microtime(true))
+            )->format('Y-m-d H:i:s.u');
+        }
+
         return date('Y-m-d H:i:s');
     }
 

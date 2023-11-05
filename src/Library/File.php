@@ -4,6 +4,8 @@ namespace krzysztofzylka\SimpleLibraries\Library;
 
 use Exception;
 use krzysztofzylka\SimpleLibraries\Exception\SimpleLibraryException;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 /**
  * Files
@@ -131,6 +133,32 @@ class File {
         }
 
         return false;
+    }
+
+    /**
+     * Copy directory
+     * @param $source
+     * @param $destination
+     * @return void
+     */
+    public static function copyDirectory($source, $destination): void
+    {
+        if (is_dir($source) && is_dir($destination)) {
+            $iterator = new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator($source, RecursiveDirectoryIterator::SKIP_DOTS),
+                RecursiveIteratorIterator::SELF_FIRST
+            );
+
+            foreach ($iterator as $item) {
+                $src = $item->getPathname();
+                $dst = $destination . '/' . $iterator->getSubPathName();
+                if ($item->isDir()) {
+                    mkdir($dst);
+                } else {
+                    copy($src, $dst);
+                }
+            }
+        }
     }
 
     /**
