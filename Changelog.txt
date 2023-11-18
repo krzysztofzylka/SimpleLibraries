@@ -1,3 +1,9 @@
+1.0.34
+Math
+- New library
+Strings
+- Add undoEscapeString
+
 1.0.33
 Date
 - Update getSimpleDate method, add microtime

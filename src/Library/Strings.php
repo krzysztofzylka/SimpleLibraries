@@ -39,6 +39,22 @@ class Strings {
         return addslashes($string);
     }
 
+
+    /**
+     * Undo escape string
+     * @param ?string $string
+     * @return ?string
+     */
+    public static function undoEscape(?string $string) : ?string {
+        if (is_null($string)) {
+            return null;
+        }
+
+        $string = str_replace(["\\\\n", "\\\\r", "\\\\t"], ["\n", "\r", "\t"], $string);
+
+        return addslashes($string);
+    }
+
     /**
      * Clean string and use lowercase
      * @param string $string ciąg znaków
