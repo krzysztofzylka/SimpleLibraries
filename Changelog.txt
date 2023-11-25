@@ -3,6 +3,8 @@ Math
 - New library
 Strings
 - Add undoEscapeString
+Integer
+- strToFloat method moved to Math library
 
 1.0.33
 Date
