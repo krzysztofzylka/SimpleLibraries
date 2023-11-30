@@ -1,4 +1,25 @@
-## Simple libraries
+# Library
+## Response
+### JSON
+```php
+$response = new \krzysztofzylka\SimpleLibraries\Library\Response();
+$response->json(array $data, ?int $statusCode = null)
+```
+
+## Server
+### Meminfo
+```php
+\krzysztofzylka\SimpleLibraries\Library\Server::getMeminfo()
+```
+### Ram info
+```php
+\krzysztofzylka\SimpleLibraries\Library\Server::getRamInfo()
+```
+### CPU usage
+```php
+\krzysztofzylka\SimpleLibraries\Library\Server::getCpuUsage()
+```
+
 ## Session
 ### Write
 ```php
