@@ -1,3 +1,7 @@
+1.0.35
+Hash
+Moved to https://packagist.org/packages/krzysztofzylka/hash
+
 1.0.34
 Math
 - New library
