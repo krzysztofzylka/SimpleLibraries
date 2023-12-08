@@ -57,6 +57,10 @@ class Sandbox {
      * @throws SimpleLibraryException
      */
     public function __construct(?string $phpFilePath, ?string $code = null) {
+        if (!is_null($phpFilePath) && !file_exists($phpFilePath)) {
+            throw new SimpleLibraryException('Provided PHP file does not exist');
+        }
+
         $this->sandboxDirectory = SandboxDirectory::generateSandboxDirectory();
         $this->phpFilePath = $phpFilePath;
         $this->sandboxFilePath = $this->sandboxDirectory . '/' . $this->sandboxFile;

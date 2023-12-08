@@ -43,7 +43,7 @@ class SandboxProcess {
      */
     public function createProcess() {
         $process = proc_open(
-            'php ' . $this->sandboxFilePath,
+            'php ' . escapeshellarg($this->sandboxFilePath),
             [
                 0 => ['pipe', 'r'],
                 1 => ['pipe', 'w'],
