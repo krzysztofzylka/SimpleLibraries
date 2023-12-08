@@ -1,6 +1,10 @@
 1.0.35
 Hash
 Moved to https://packagist.org/packages/krzysztofzylka/hash
+Reflection
+Moved to https://packagist.org/packages/krzysztofzylka/reflection
+Price
+Moved to https://packagist.org/packages/krzysztofzylka/price
 
 1.0.34
 Math
