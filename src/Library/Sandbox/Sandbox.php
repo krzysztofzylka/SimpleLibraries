@@ -55,6 +55,7 @@ class Sandbox {
      * @param ?string $phpFilePath
      * @param ?string $code
      * @throws SimpleLibraryException
+     * @throws Exception
      */
     public function __construct(?string $phpFilePath, ?string $code = null) {
         if (!is_null($phpFilePath) && !file_exists($phpFilePath)) {
