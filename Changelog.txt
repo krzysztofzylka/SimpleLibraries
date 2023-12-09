@@ -1,3 +1,7 @@
+1.0.37
+Generator
+Methods uniqId, uniqHash and guid moved to https://packagist.org/packages/krzysztofzylka/generator
+
 1.0.36
 PHPDoc
 Moved to https://packagist.org/packages/krzysztofzylka/reflection
