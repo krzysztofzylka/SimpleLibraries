@@ -2,7 +2,9 @@
 Generator
 Methods uniqId, uniqHash and guid moved to https://packagist.org/packages/krzysztofzylka/generator
 Sandbox
-Moved to https://github.com/krzysztofzylka/Sandbox
+Moved to https://packagist.org/packages/krzysztofzylka/sandbox
+Request
+Moved to https://packagist.org/packages/krzysztofzylka/request
 
 1.0.36
 PHPDoc
