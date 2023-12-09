@@ -5,6 +5,8 @@ Sandbox
 Moved to https://packagist.org/packages/krzysztofzylka/sandbox
 Request
 Moved to https://packagist.org/packages/krzysztofzylka/request
+Strings
+Moved to https://packagist.org/packages/krzysztofzylka/strings
 
 1.0.36
 PHPDoc
