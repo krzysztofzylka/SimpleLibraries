@@ -1,6 +1,8 @@
 1.0.38
 Console
 Moved to https://packagist.org/packages/krzysztofzylka/console
+Date
+Moved to https://packagist.org/packages/krzysztofzylka/date
 
 1.0.37
 Generator
